@@ -17,3 +17,12 @@ def index():
         albums.extend(results['items'])
     
     return render_template("index.html", albums=albums)
+
+@app.route('/samples/')
+def second_samples():
+    lz_uri = 'spotify:artist:36QJpDe2go2KgaRleHCDTp'
+
+    spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+    results = spotify.artist_top_tracks(lz_uri)
+    
+    return render_template("samples.html", results=results['tracks'][:10])
