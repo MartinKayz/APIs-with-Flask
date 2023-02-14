@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+    <h1> Welcome to the Samples Spotify  app Page </h1>
+
+    {% for track in results  %}
+        <div style="padding: 10px; background-color: '#6ae95'; margin: 20px">
+                <h3>'Track  : ' - {{ track['name'] }} </h3>
+                <h3>'Audio  : ' - {{ track['preview_url'] }} </h3>
+                <h3>'Cover art: '- {{ track['album']['images'][0]['url'] }} </h3>
+
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
