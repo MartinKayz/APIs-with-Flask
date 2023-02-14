@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+    <h1> Welcome to the Spotify app </h1>
+
+    {% for album in albums %}
+        <div style="padding: 10px; background-color: '#6ae95'; margin: 20px">
+                <h3> {{ album }} </h3>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
