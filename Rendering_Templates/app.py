@@ -11,3 +11,16 @@ def hello_world():
 @app.route('/about/')
 def about_page():
     return render_template("about.html", today=date.today())
+
+@app.route('/comments/')
+def comments():
+    comments = [
+            'This is the first comment',
+            'This is the second comment',
+            'This is the third comment',
+            'This is the fourth comment'
+            ]
+    return render_template("comments.html", comments=comments)
+
+
+
