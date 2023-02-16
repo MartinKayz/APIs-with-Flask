@@ -16,9 +16,31 @@
             </div>
         {% endfor %}
     </div>
-
+    
     <div>
         <p> {{ comments | join(' | ') }} </p>
+    </div>
+    
+    <div>
+        <!-- This html code was not rendered -->
+        
+        {{ "<h1> Comments </h1>" }}
+
+
+        <p> {{ comments | join('<hr>') }} </p> 
+
+
+    </div>
+
+    <div>
+        <!-- This html code will now be rendered -->
+        
+        {{ "<h1> Comments </h1>" | safe }}
+
+
+        <p> {{ comments | join('<hr>') | safe }} </p> 
+
+
     </div>
 
 {% endblock %}
