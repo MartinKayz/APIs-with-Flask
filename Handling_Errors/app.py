@@ -25,10 +25,14 @@ def about():
 
 @app.route('/messages/<int:idx>/')
 def message(idx):
+    # Logging within the application
+    app.logger.info('Building the messages list ...')
     messages = ['Message Zero', 'Message One', 'Message Two']
     try:
+        app.logger.debug('Getting the message with index: {}'.format(idx))
         return render_template('message.html', messages=messages[idx])
     except IndexError:
+        app.logger.error('Index: {} is causing the index Error'.format(idx))
         abort(404)
 
 
