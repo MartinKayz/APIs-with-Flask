@@ -3,6 +3,7 @@ from datetime import date
 from flask import Flask, render_template
 
 app = Flask(__name__)
+app.config.from_pyfile('settings.py')
 
 @app.route("/")
 def hello_world():
